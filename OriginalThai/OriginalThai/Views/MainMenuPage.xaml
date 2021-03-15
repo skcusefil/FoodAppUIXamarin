@@ -22,7 +22,7 @@
                        TextColor="White" />
                 </StackLayout>
                 <StackLayout Margin="40,0">
-                    <Label Text="Spezielität thailändische Küche von vier Regional"  
+                    <Label Text="Spezialität thailändische Küche"  
                        TextColor="White" />
                 </StackLayout>
             </StackLayout>
