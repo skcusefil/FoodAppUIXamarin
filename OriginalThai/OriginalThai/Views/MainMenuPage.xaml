@@ -27,28 +27,32 @@
                 </StackLayout>
             </StackLayout>
             <CarouselView Grid.ColumnSpan="2" ItemsSource="{Binding MenuCatagory}" 
-                          Margin="0,155,0,0" PeekAreaInsets="80"
-                          PositionChanged="CarouselView_PositionChanged">
+                          Margin="0,155,0,0" 
+                          PositionChanged="CarouselView_PositionChanged" 
+                          HorizontalOptions="Start" Loop="True" PeekAreaInsets="30"
+                          x:Name="MenuList">
                 <CarouselView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10" />
                 </CarouselView.ItemsLayout>
                 <CarouselView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Margin="15,0">
-                                <Button x:Name="MenuBtn" Text="{Binding .}" 
-                                        TextColor="White"
-                                        BackgroundColor="#FEC017"
-                                        WidthRequest="200"
-                                        FontSize="14"
-                                        Margin="10,0"
-                                        CornerRadius="20" />
-                            </StackLayout>
+                            <Button Text="{Binding .}" 
+                                    TextColor="White"
+                                    BackgroundColor="#FEC017"
+                                    WidthRequest="200"
+                                    FontSize="14"
+                                    Margin="10,0"
+                                    CornerRadius="20" 
+                                    Command="{Binding MenuSelectCommand}"
+                                    />
+                        </StackLayout>
                         </DataTemplate>
                     </CarouselView.ItemTemplate>
                 </CarouselView>
         </Grid>
         <StackLayout Grid.Row="2">
-            <CarouselView Grid.ColumnSpan="2" ItemsSource="{Binding MenuCatagory}" 
+            <CarouselView Grid.ColumnSpan="2" ItemsSource="{Binding FoodList}" 
                           Margin="0,10,0,0" PeekAreaInsets="80"
                           PositionChanged="CarouselView_PositionChanged">
                 <CarouselView.ItemsLayout>
@@ -78,8 +82,18 @@
                                                 <StackLayout Grid.Row="1" HorizontalOptions="Start">
                                                     <Image Source="rating.png" HeightRequest="70" Margin="0"/>
                                                     <StackLayout>
-                                                        <Label Text="Food Name" TextColor="#365D12" />
-                                                        <Label Text="Price €" TextColor="#365D12"/>
+                                                        <Label Text="{Binding Name}" TextColor="#365D12" />
+
+                                                        <Label TextColor="#365D12">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <FormattedString.Spans>
+                                                                        <Span Text="{Binding Price}"  />
+                                                                        <Span Text=" €" />
+                                                                    </FormattedString.Spans>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
                                                     </StackLayout>
                                                 </StackLayout>
                                             </Grid>
@@ -104,9 +118,9 @@
                      VerticalOptions="End" 
                      HorizontalOptions="Center" Orientation="Vertical" >
             <Grid>
-                <Image Source="shoppingbag.png" WidthRequest="30" HeightRequest="30"
-                       xct:IconTintColorEffect.TintColor="#365D12"/>
-                <Label Text="2" FontSize="Body" HorizontalOptions="Center" 
+                <Image Source="shoppingbag.png" WidthRequest="25" HeightRequest="25"
+                       xct:IconTintColorEffect.TintColor="Black"/>
+                <Label Text="2" FontSize="Small" HorizontalOptions="Center" 
                        TextColor="#365D12"
                        VerticalOptions="End" />
             </Grid>

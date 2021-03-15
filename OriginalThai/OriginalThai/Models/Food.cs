@@ -7,9 +7,9 @@ namespace OriginalThai.Models
 {
     public class Food
     {
-        public string Id;
+        public int Id;
         public string Name;
-        public Category Category;
+        public string Category;
         public double Price;
         public string Detail;
     }
