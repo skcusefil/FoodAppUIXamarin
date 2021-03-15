@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:OriginalThai.ViewModels"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="OriginalThai.Views.MainMenuPage">
 
     <ContentPage.BindingContext>
@@ -98,9 +99,20 @@
                 </CarouselView.ItemTemplate>
             </CarouselView>
             <StackLayout BackgroundColor="Pink" Margin="35" VerticalOptions="Center">
-                
+
             </StackLayout>
-           
-        </StackLayout>  
+        </StackLayout>
+        <StackLayout Margin="0,0,0,20"
+                     Grid.Row="2" 
+                     VerticalOptions="End" 
+                     HorizontalOptions="Center" Orientation="Vertical" >
+            <Grid>
+                <Image Source="shoppingbag.png" WidthRequest="30" HeightRequest="30"
+                       xct:IconTintColorEffect.TintColor="#365D12"/>
+                <Label Text="2" FontSize="Body" HorizontalOptions="Center" 
+                       TextColor="#365D12"
+                       VerticalOptions="End" />
+            </Grid>
+        </StackLayout>
     </Grid>
 </ContentPage>
