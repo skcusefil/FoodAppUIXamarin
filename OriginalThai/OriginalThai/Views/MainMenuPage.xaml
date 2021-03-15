@@ -56,7 +56,7 @@
                 </CarouselView.ItemsLayout>
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        
+
                         <StackLayout HorizontalOptions="Center" Padding="10"
                                      VerticalOptions="Center"
                                      >
@@ -93,14 +93,11 @@
                                             TextColor="White"/>
                                 </StackLayout>
                             </Grid>
-                            
+
                         </StackLayout>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
-            <StackLayout BackgroundColor="Pink" Margin="35" VerticalOptions="Center">
-
-            </StackLayout>
         </StackLayout>
         <StackLayout Margin="0,0,0,20"
                      Grid.Row="2" 
