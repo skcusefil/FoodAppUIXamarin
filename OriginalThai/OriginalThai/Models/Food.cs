@@ -12,5 +12,6 @@ namespace OriginalThai.Models
         public string Category;
         public double Price;
         public string Detail;
+        public string Photo;
     }
 }

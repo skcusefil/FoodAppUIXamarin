@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:OriginalThai.ViewModels"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             x:Class="OriginalThai.Views.MainMenuPage">
+             x:Class="OriginalThai.Views.MainMenuPage"
+             x:Name="mainMenuPage">
 
     <ContentPage.BindingContext>
         <vm:MainMenuViewModel x:Name="vm"/>
@@ -44,7 +45,8 @@
                                     FontSize="14"
                                     Margin="10,0"
                                     CornerRadius="20" 
-                                    Command="{Binding MenuSelectCommand}"
+                                    Command="{Binding Source={x:Reference mainMenuPage}, Path=BindingContext.MenuSelectCommand}"
+                                    CommandParameter="{Binding .}"
                                     />
                         </StackLayout>
                         </DataTemplate>
@@ -77,7 +79,7 @@
                                                     <RowDefinition Height="*" />
                                                 </Grid.RowDefinitions>
                                                 <StackLayout Grid.Row="0">
-                                                    <Image Source="greencurry.jpg" WidthRequest="150" />
+                                                    <Image Source="{Binding Photo}" HeightRequest="100" />
                                                 </StackLayout>
                                                 <StackLayout Grid.Row="1" HorizontalOptions="Start">
                                                     <Image Source="rating.png" HeightRequest="70" Margin="0"/>

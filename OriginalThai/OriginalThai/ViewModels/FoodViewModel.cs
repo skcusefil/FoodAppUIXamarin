@@ -11,12 +11,16 @@ namespace OriginalThai.ViewModels
         private string _catagory;
         private double _price;
         private string _detail;
+        private string _photo;
+
 
         public int Id { get => _id; set => SetProperty(ref _id,value); }
         public string Name { get => _name; set => SetProperty(ref _name, value); }
         public string Category { get => _catagory; set => SetProperty(ref _catagory, value); }
         public double Price { get => _price; set => SetProperty(ref _price, value); }
         public string Detail { get => _detail; set => SetProperty(ref _detail, value); }
+        public string Photo { get => _photo; set => SetProperty(ref _photo, value); }
+
 
     }
 }
